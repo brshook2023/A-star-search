@@ -688,43 +688,15 @@ def a_star_search(puzzle, depth_num, iteration):
         mem_size = 0
 
         while 1:
-            # print("\nNodes Generated: ")
-            # print(len(explored))
-
-            # if len(explored) > 100000:
-            #     print("Memory Error: Too many nodes have been generated.")
-            #     exit()
-
-            # print("\nExplored Size: ")
-            # print(mem_size)
             if frontier.empty():
                 return "Failure: Solution not found."
 
             node = frontier.get()
-            # print(puzzle.initial_state)
-            # print("\nPath Cost/Depth: ")
-            # print(node[1].path_cost)
-            # puzzle.print_board(node[1].state)
+
             mem_size += node_size
 
             # check if puzzle was solved
             if puzzle.goal_test(node[1].current_state) == True:
-                # write to csv - start state, path length, EBF, nodes generated
-                # print("Initial State: ")
-                # puzzle.print_board(puzzle.initial_state)
-                # print()
-                # print("Path Length: ")
-                # print(len(node[1].path))
-                # print("\nSolution Path: ")
-                # for i in node[1].path:
-                #     puzzle.print_board(i)
-                #     print()
-                # puzzle.print_board(puzzle.goal_state)
-                # print("\nPath Length: ")
-                # print(len(node[1].path))
-                # ebf = bf_sum / len(explored)
-
-                # print("\nEBF: " + str(ebf))
 
                 end_time = time.time()
 
